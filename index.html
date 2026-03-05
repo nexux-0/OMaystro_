@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>O’Maystro — Meknès</title>
+    <meta name="description" content="O’Maystro — Where Italian Passion Meets Mediterranean Flavor. Premium Mediterranean dining in Meknès: pizzas, pastas, burgers, tacos, refined plates." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { display: ["Playfair Display", "serif"], sans: ["Inter", "system-ui", "sans-serif"] },
+            colors: {
+              ink: "#0B0C0F",
+              charcoal: "#0F1117",
+              panel: "rgba(255,255,255,0.06)",
+              panel2: "rgba(255,255,255,0.08)",
+              gold: "#C9A227",
+              beige: "#E8DDC4",
+              line: "rgba(255,255,255,0.12)"
+            },
+            boxShadow: {
+              luxe: "0 16px 60px rgba(0,0,0,.55)",
+              glow: "0 0 0 1px rgba(201,162,39,.25), 0 24px 80px rgba(0,0,0,.65)"
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-ink text-white font-sans antialiased selection:bg-gold/30 selection:text-white">
+    <div id="app" class="min-h-screen">
+      <header id="top" class="fixed top-0 inset-x-0 z-50">
+        <div class="nav_blur">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="h-16 flex items-center justify-between">
+              <a href="#top" class="flex items-center gap-3 group">
+                <div class="h-9 w-9 rounded-xl bg-white/8 border border-white/10 grid place-items-center shadow-luxe">
+                  <span class="font-display text-gold text-lg leading-none">O</span>
+                </div>
+                <div class="leading-tight">
+                  <div class="font-display text-base tracking-wide">O’Maystro</div>
+                  <div class="text-[11px] text-white/60 -mt-0.5">Meknès · Mediterranean</div>
+                </div>
+              </a>
+
+              <nav class="hidden md:flex items-center gap-1">
+                <a class="nav_link" href="#about">About</a>
+                <a class="nav_link" href="#menu">Menu</a>
+                <a class="nav_link" href="#gallery">Photos</a>
+                <a class="nav_link" href="#reviews">Reviews</a>
+                <a class="nav_link" href="#location">Location</a>
+              </nav>
+
+              <div class="flex items-center gap-2">
+                <a id="cta_call_top" class="btn btn_ghost hidden sm:inline-flex" href="#">
+                  <i data-lucide="phone" class="h-4 w-4"></i>
+                  <span>Call</span>
+                </a>
+                <button id="open_booking" class="btn btn_gold">
+                  <i data-lucide="sparkles" class="h-4 w-4"></i>
+                  <span>Book</span>
+                </button>
+                <button id="open_mobile" class="md:hidden btn btn_ghost px-3" aria-label="Open menu">
+                  <i data-lucide="menu" class="h-5 w-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="mobile_panel" class="md:hidden hidden border-t border-white/10">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 py-3 grid gap-1">
+              <a class="mobile_link" href="#about">About</a>
+              <a class="mobile_link" href="#menu">Menu</a>
+              <a class="mobile_link" href="#gallery">Photos</a>
+              <a class="mobile_link" href="#reviews">Reviews</a>
+              <a class="mobile_link" href="#location">Location</a>
+              <div class="pt-2 grid grid-cols-2 gap-2">
+                <a id="cta_directions_top" class="btn btn_ghost justify-center" href="#">
+                  <i data-lucide="map-pin" class="h-4 w-4"></i>
+                  <span>Directions</span>
+                </a>
+                <a id="cta_glovo_top" class="btn btn_ghost justify-center" href="#" target="_blank" rel="noreferrer">
+                  <i data-lucide="shopping-bag" class="h-4 w-4"></i>
+                  <span>Glovo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="pt-16">
+        <section class="relative overflow-hidden">
+          <div class="hero_media">
+            <canvas id="hero_particles" class="hero_canvas" aria-hidden="true"></canvas>
+            <div class="hero_image" aria-hidden="true"></div>
+            <div class="hero_vignette" aria-hidden="true"></div>
+          </div>
+
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="py-16 sm:py-20 md:py-28">
+              <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">
+                  <span class="h-1.5 w-1.5 rounded-full bg-gold"></span>
+                  <span>Official website · Meknès, Morocco</span>
+                </div>
+
+                <h1 class="mt-6 font-display text-4xl sm:text-5xl md:text-6xl leading-[1.03] tracking-tight">
+                  O’Maystro
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-beige/85 leading-relaxed">
+                  Where Italian Passion Meets Mediterranean Flavor
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                  <a class="btn btn_gold" href="#menu">
+                    <i data-lucide="utensils-crossed" class="h-4 w-4"></i>
+                    <span>View Menu</span>
+                  </a>
+                  <a id="cta_directions_hero" class="btn btn_ghost" href="#">
+                    <i data-lucide="navigation" class="h-4 w-4"></i>
+                    <span>Get Directions</span>
+                  </a>
+                  <a id="cta_glovo_hero" class="btn btn_ghost" href="#" target="_blank" rel="noreferrer">
+                    <i data-lucide="truck" class="h-4 w-4"></i>
+                    <span>Order on Glovo</span>
+                  </a>
+                </div>
+
+                <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <div class="stat_card">
+                    <div class="text-xs text-white/60">Rating</div>
+                    <div class="mt-1 flex items-center gap-2">
+                      <div class="font-semibold">4.0</div>
+                      <div class="text-gold text-xs tracking-wide">★★★★☆</div>
+                    </div>
+                  </div>
+                  <div class="stat_card">
+                    <div class="text-xs text-white/60">Reviews</div>
+                    <div class="mt-1 font-semibold">283</div>
+                  </div>
+                  <div class="stat_card">
+                    <div class="text-xs text-white/60">Opens</div>
+                    <div id="open_hours" class="mt-1 font-semibold">12:00</div>
+                  </div>
+                  <div class="stat_card">
+                    <div class="text-xs text-white/60">Services</div>
+                    <div class="mt-1 font-semibold">Dine · Takeaway</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-14 sm:mt-16 grid md:grid-cols-12 gap-6 items-end">
+                <div class="md:col-span-8">
+                  <div class="glass_panel p-5 sm:p-6">
+                    <div class="flex items-start justify-between gap-4">
+                      <div>
+                        <div class="text-xs text-white/60">Address</div>
+                        <div id="address_line" class="mt-1 text-sm sm:text-base text-white/90"></div>
+                        <div id="plus_code" class="mt-1 text-xs text-white/50"></div>
+                      </div>
+                      <div class="hidden sm:flex items-center gap-2">
+                        <a id="cta_call_hero" class="btn btn_ghost" href="#">
+                          <i data-lucide="phone" class="h-4 w-4"></i>
+                          <span>Call Now</span>
+                        </a>
+                        <button class="btn btn_ghost" id="open_booking_hero">
+                          <i data-lucide="calendar" class="h-4 w-4"></i>
+                          <span>Book</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                      <span class="pill">Fast service</span>
+                      <span class="pill">Friendly staff</span>
+                      <span class="pill">Great value half & half formula</span>
+                      <span class="pill">Cozy ambiance</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="md:col-span-4">
+                  <div class="glass_panel p-5 sm:p-6">
+                    <div class="flex items-center justify-between">
+                      <div class="text-sm font-medium">Quick actions</div>
+                      <i data-lucide="bolt" class="h-4 w-4 text-gold"></i>
+                    </div>
+                    <div class="mt-4 grid gap-2">
+                      <a id="cta_call_card" class="btn btn_gold w-full justify-center" href="#">
+                        <i data-lucide="phone-call" class="h-4 w-4"></i>
+                        <span>Call Now</span>
+                      </a>
+                      <a id="cta_directions_card" class="btn btn_ghost w-full justify-center" href="#">
+                        <i data-lucide="map" class="h-4 w-4"></i>
+                        <span>Get Directions</span>
+                      </a>
+                      <a id="cta_glovo_card" class="btn btn_ghost w-full justify-center" href="#" target="_blank" rel="noreferrer">
+                        <i data-lucide="shopping-basket" class="h-4 w-4"></i>
+                        <span>Order on Glovo</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section_border"></div>
+        </section>
+
+        <section id="about" class="section">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-10 items-start">
+              <div class="lg:col-span-6">
+                <div class="section_kicker">About</div>
+                <h2 class="section_title">Modern Mediterranean — with an Italian heart</h2>
+                <div id="about_md" class="prose_luxe mt-6"></div>
+
+                <div class="mt-8 grid sm:grid-cols-2 gap-3">
+                  <div class="feature_card">
+                    <div class="feature_icon"><i data-lucide="flame" class="h-4 w-4"></i></div>
+                    <div>
+                      <div class="font-medium">Cinematic flavors</div>
+                      <div class="text-sm text-white/60 mt-1">Pizzas, pastas, gourmet burgers, tacos, and refined plates.</div>
+                    </div>
+                  </div>
+                  <div class="feature_card">
+                    <div class="feature_icon"><i data-lucide="clock" class="h-4 w-4"></i></div>
+                    <div>
+                      <div class="font-medium">Fast service</div>
+                      <div class="text-sm text-white/60 mt-1">Perfect for lunch breaks and late cravings.</div>
+                    </div>
+                  </div>
+                  <div class="feature_card">
+                    <div class="feature_icon"><i data-lucide="heart-handshake" class="h-4 w-4"></i></div>
+                    <div>
+                      <div class="font-medium">Friendly staff</div>
+                      <div class="text-sm text-white/60 mt-1">Warm welcome, consistent quality, great value.</div>
+                    </div>
+                  </div>
+                  <div class="feature_card">
+                    <div class="feature_icon"><i data-lucide="sparkles" class="h-4 w-4"></i></div>
+                    <div>
+                      <div class="font-medium">Cozy ambiance</div>
+                      <div class="text-sm text-white/60 mt-1">Dark luxury with warm Mediterranean energy.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-6">
+                <div class="showcase">
+                  <div class="showcase_top">
+                    <div class="flex items-center gap-2">
+                      <div class="h-2 w-2 rounded-full bg-gold"></div>
+                      <div class="text-xs text-white/70">Cinematic food section</div>
+                    </div>
+                    <div class="text-xs text-white/50">Add your menu/social photos below</div>
+                  </div>
+                  <div class="showcase_media">
+                    <div class="showcase_image"></div>
+                    <div class="showcase_overlay">
+                      <div class="text-sm font-medium">Signature moments</div>
+                      <div class="text-xs text-white/60 mt-1">Upload real photos from your menu + social feed for the best look.</div>
+                      <div class="mt-4 flex gap-2">
+                        <a href="#gallery" class="btn btn_gold">
+                          <i data-lucide="images" class="h-4 w-4"></i>
+                          <span>Add Photos</span>
+                        </a>
+                        <a href="#menu" class="btn btn_ghost">
+                          <i data-lucide="book-open" class="h-4 w-4"></i>
+                          <span>Browse Menu</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-6 glass_panel p-5 sm:p-6">
+                  <div class="flex items-center justify-between gap-4">
+                    <div>
+                      <div class="text-sm font-medium">Services</div>
+                      <div class="text-sm text-white/60 mt-1">Dine-in · Takeaway · Contactless delivery</div>
+                    </div>
+                    <i data-lucide="concierge-bell" class="h-5 w-5 text-gold"></i>
+                  </div>
+                  <div class="mt-4 grid sm:grid-cols-2 gap-2">
+                    <a id="cta_call_about" class="btn btn_ghost justify-center" href="#">
+                      <i data-lucide="phone" class="h-4 w-4"></i>
+                      <span>Call Now</span>
+                    </a>
+                    <button id="open_booking_about" class="btn btn_ghost justify-center">
+                      <i data-lucide="calendar-check" class="h-4 w-4"></i>
+                      <span>Book a Table</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="menu" class="section">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+              <div>
+                <div class="section_kicker">Menu</div>
+                <h2 class="section_title">Browse the full menu</h2>
+                <p class="mt-3 text-white/60 max-w-2xl">
+                  Premium, clean layout with exact dish names and prices. Use tabs to explore categories.
+                </p>
+              </div>
+
+              <div class="w-full md:w-[360px]">
+                <div class="search_wrap">
+                  <i data-lucide="search" class="h-4 w-4 text-white/55"></i>
+                  <input id="menu_search" class="search_input" type="text" placeholder="Search dishes (e.g., Pepperoni, Carbonara)" />
+                  <button id="menu_clear" class="search_clear hidden" type="button" aria-label="Clear search">
+                    <i data-lucide="x" class="h-4 w-4"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <div id="menu_tabs" class="tabs"></div>
+              <div id="menu_panel" class="mt-6 grid gap-3"></div>
+              <div id="menu_empty" class="hidden mt-8 glass_panel p-6 text-center text-white/70">
+                No results. Try a different search.
+              </div>
+            </div>
+
+            <div class="mt-10 glass_panel p-6">
+              <div class="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+                <div>
+                  <div class="font-medium">Need a recommendation?</div>
+                  <div class="text-sm text-white/60 mt-1">Ask the AI concierge using the real menu data.</div>
+                </div>
+                <a href="#ai" class="btn btn_gold">
+                  <i data-lucide="wand-2" class="h-4 w-4"></i>
+                  <span>Open AI Concierge</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" class="section">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+              <div>
+                <div class="section_kicker">Photos</div>
+                <h2 class="section_title">Use your real menu & social photos</h2>
+                <p class="mt-3 text-white/60 max-w-2xl">
+                  Add the photos you sent (menu images) and any photos from your social media. Everything stays on the visitor’s device (no upload server needed).
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <label class="btn btn_gold cursor-pointer">
+                  <i data-lucide="upload" class="h-4 w-4"></i>
+                  <span>Upload Photos</span>
+                  <input id="gallery_files" type="file" accept="image/*" multiple class="hidden" />
+                </label>
+                <button id="gallery_add_url" class="btn btn_ghost">
+                  <i data-lucide="link" class="h-4 w-4"></i>
+                  <span>Add by URL</span>
+                </button>
+                <button id="gallery_clear" class="btn btn_ghost">
+                  <i data-lucide="trash-2" class="h-4 w-4"></i>
+                  <span>Clear</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <div id="gallery_grid" class="masonry"></div>
+              <div id="gallery_hint" class="mt-8 glass_panel p-6 text-center text-white/70">
+                Upload photos to instantly elevate the site: menu boards, pizzas, pastas, interior, plating shots.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reviews" class="section">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="grid lg:grid-cols-12 gap-10 items-start">
+              <div class="lg:col-span-5">
+                <div class="section_kicker">Reviews</div>
+                <h2 class="section_title">4.0 ★★★★☆</h2>
+                <p class="mt-3 text-white/60">Based on 283 reviews.</p>
+
+                <div class="mt-6 glass_panel p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="font-medium">Customer sentiment</div>
+                    <i data-lucide="bar-chart-3" class="h-5 w-5 text-gold"></i>
+                  </div>
+                  <div class="mt-4">
+                    <canvas id="rating_chart" height="160"></canvas>
+                  </div>
+                  <div class="mt-4 text-xs text-white/50">
+                    A premium presentation that builds trust and drives calls, directions, and orders.
+                  </div>
+                </div>
+              </div>
+
+              <div class="lg:col-span-7">
+                <div id="review_cards" class="grid sm:grid-cols-2 gap-3"></div>
+                <div class="mt-6 glass_panel p-6">
+                  <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <div>
+                      <div class="font-medium">Ready to visit?</div>
+                      <div class="text-sm text-white/60 mt-1">Call for availability or book instantly via WhatsApp.</div>
+                    </div>
+                    <div class="flex gap-2">
+                      <a id="cta_call_reviews" class="btn btn_gold" href="#">
+                        <i data-lucide="phone" class="h-4 w-4"></i>
+                        <span>Call Now</span>
+                      </a>
+                      <button id="open_booking_reviews" class="btn btn_ghost">
+                        <i data-lucide="calendar" class="h-4 w-4"></i>
+                        <span>Book</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="location" class="section">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+              <div>
+                <div class="section_kicker">Location</div>
+                <h2 class="section_title">Find O’Maystro in Meknès</h2>
+                <p class="mt-3 text-white/60 max-w-2xl">
+                  Résidence Arreda, Magasin 1,2, Rue de Fes, Meknès 50000
+                </p>
+              </div>
+              <div class="flex gap-2">
+                <a id="cta_maps_location" class="btn btn_gold" href="#" target="_blank" rel="noreferrer">
+                  <i data-lucide="map-pin" class="h-4 w-4"></i>
+                  <span>Open in Maps</span>
+                </a>
+                <a id="cta_call_location" class="btn btn_ghost" href="#">
+                  <i data-lucide="phone" class="h-4 w-4"></i>
+                  <span>Call Now</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="mt-8 grid lg:grid-cols-12 gap-6">
+              <div class="lg:col-span-8">
+                <div class="map_wrap">
+                  <iframe id="map_iframe" title="O’Maystro map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+              <div class="lg:col-span-4">
+                <div class="glass_panel p-6">
+                  <div class="flex items-center justify-between">
+                    <div class="font-medium">Contact</div>
+                    <i data-lucide="contact" class="h-5 w-5 text-gold"></i>
+                  </div>
+                  <div class="mt-4 grid gap-3 text-sm">
+                    <div class="flex items-start gap-3">
+                      <i data-lucide="map" class="h-4 w-4 text-white/70 mt-0.5"></i>
+                      <div>
+                        <div class="text-white/80">Address</div>
+                        <div id="address_line_2" class="text-white/60 mt-1"></div>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <i data-lucide="clock" class="h-4 w-4 text-white/70 mt-0.5"></i>
+                      <div>
+                        <div class="text-white/80">Hours</div>
+                        <div id="hours_line" class="text-white/60 mt-1"></div>
+                      </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <i data-lucide="phone" class="h-4 w-4 text-white/70 mt-0.5"></i>
+                      <div>
+                        <div class="text-white/80">Phone</div>
+                        <a id="phone_link" class="text-gold mt-1 inline-block hover:opacity-90" href="#"></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mt-6 grid gap-2">
+                    <a id="cta_glovo_location" class="btn btn_ghost justify-center" href="#" target="_blank" rel="noreferrer">
+                      <i data-lucide="truck" class="h-4 w-4"></i>
+                      <span>Order on Glovo</span>
+                    </a>
+                    <button id="open_booking_location" class="btn btn_gold justify-center">
+                      <i data-lucide="calendar-heart" class="h-4 w-4"></i>
+                      <span>Book via WhatsApp</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div id="ai" class="mt-6 glass_panel p-6">
+                  <div class="flex items-center justify-between gap-4">
+                    <div>
+                      <div class="font-medium">AI Concierge</div>
+                      <div class="text-sm text-white/60 mt-1">Ask what to order from the real menu.</div>
+                    </div>
+                    <i data-lucide="bot" class="h-5 w-5 text-gold"></i>
+                  </div>
+
+                  <div class="mt-4 grid gap-2">
+                    <textarea id="ai_input" class="ai_input" rows="3" placeholder="Example: I want something spicy and filling under 70dh. What do you recommend?"></textarea>
+                    <div class="flex items-center justify-between gap-2">
+                      <div class="flex items-center gap-2">
+                        <button id="ai_send" class="btn btn_gold">
+                          <i data-lucide="send" class="h-4 w-4"></i>
+                          <span>Ask</span>
+                        </button>
+                        <button id="ai_key" class="btn btn_ghost">
+                          <i data-lucide="key-round" class="h-4 w-4"></i>
+                          <span>API Key</span>
+                        </button>
+                      </div>
+                      <div id="ai_status" class="text-xs text-white/50"></div>
+                    </div>
+                    <div id="ai_output" class="ai_output hidden"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="mt-8 border-t border-white/10">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10">
+            <div class="grid md:grid-cols-12 gap-8 items-start">
+              <div class="md:col-span-5">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-2xl bg-white/8 border border-white/10 grid place-items-center shadow-luxe">
+                    <span class="font-display text-gold text-xl leading-none">O</span>
+                  </div>
+                  <div>
+                    <div class="font-display text-lg">O’Maystro</div>
+                    <div class="text-xs text-white/55">Dark luxury · Warm Mediterranean</div>
+                  </div>
+                </div>
+                <p class="mt-4 text-sm text-white/60 max-w-sm">
+                  Official website. For fastest booking, use WhatsApp or call directly.
+                </p>
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <a id="cta_call_footer" class="btn btn_ghost" href="#">
+                    <i data-lucide="phone" class="h-4 w-4"></i>
+                    <span>Call</span>
+                  </a>
+                  <a id="cta_maps_footer" class="btn btn_ghost" href="#" target="_blank" rel="noreferrer">
+                    <i data-lucide="map-pin" class="h-4 w-4"></i>
+                    <span>Directions</span>
+                  </a>
+                  <a id="cta_glovo_footer" class="btn btn_gold" href="#" target="_blank" rel="noreferrer">
+                    <i data-lucide="shopping-bag" class="h-4 w-4"></i>
+                    <span>Order on Glovo</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="md:col-span-7 grid sm:grid-cols-3 gap-6">
+                <div>
+                  <div class="footer_title">Explore</div>
+                  <div class="mt-3 grid gap-2 text-sm">
+                    <a class="footer_link" href="#menu">Menu</a>
+                    <a class="footer_link" href="#gallery">Photos</a>
+                    <a class="footer_link" href="#reviews">Reviews</a>
+                  </div>
+                </div>
+                <div>
+                  <div class="footer_title">Services</div>
+                  <div class="mt-3 grid gap-2 text-sm text-white/60">
+                    <div>Dine-in</div>
+                    <div>Takeaway</div>
+                    <div>Contactless delivery</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="footer_title">Address</div>
+                  <div id="address_line_3" class="mt-3 text-sm text-white/60"></div>
+                  <div id="plus_code_2" class="mt-2 text-xs text-white/45"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-white/45">
+              <div>© <span id="year"></span> O’Maystro. All rights reserved.</div>
+              <div class="flex items-center gap-2">
+                <span class="inline-flex items-center gap-1"><i data-lucide="shield" class="h-3.5 w-3.5"></i> Secure experience</span>
+                <span class="text-white/30">·</span>
+                <span class="inline-flex items-center gap-1"><i data-lucide="sparkles" class="h-3.5 w-3.5"></i> Premium design</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </main>
+
+      <a id="whatsapp_float" class="whatsapp_float" href="#" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+        <span class="whatsapp_inner">
+          <i data-lucide="message-circle" class="h-5 w-5"></i>
+        </span>
+      </a>
+
+      <div id="modal_backdrop" class="modal_backdrop hidden" aria-hidden="true"></div>
+      <div id="booking_modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="booking_title">
+        <div class="modal_card">
+          <div class="modal_head">
+            <div>
+              <div id="booking_title" class="font-display text-2xl">Book a table</div>
+              <div class="text-sm text-white/60 mt-1">We’ll prefill a WhatsApp message for you.</div>
+            </div>
+            <button id="close_booking" class="btn btn_ghost px-3" aria-label="Close">
+              <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+          </div>
+
+          <div class="modal_body">
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div class="field">
+                <label class="field_label" for="bk_name">Name</label>
+                <input id="bk_name" class="field_input" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label class="field_label" for="bk_phone">Phone</label>
+                <input id="bk_phone" class="field_input" placeholder="Optional" inputmode="tel" />
+              </div>
+              <div class="field">
+                <label class="field_label" for="bk_date">Date</label>
+                <input id="bk_date" class="field_input" type="date" />
+              </div>
+              <div class="field">
+                <label class="field_label" for="bk_time">Time</label>
+                <input id="bk_time" class="field_input" type="time" />
+              </div>
+              <div class="field sm:col-span-2">
+                <label class="field_label" for="bk_guests">Guests</label>
+                <input id="bk_guests" class="field_input" type="number" min="1" max="20" value="2" />
+              </div>
+              <div class="field sm:col-span-2">
+                <label class="field_label" for="bk_note">Note</label>
+                <textarea id="bk_note" class="field_input" rows="3" placeholder="Any preferences? (e.g., birthday, indoor/outdoor)"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal_foot">
+            <button id="booking_send" class="btn btn_gold w-full justify-center">
+              <i data-lucide="message-square" class="h-4 w-4"></i>
+              <span>Send on WhatsApp</span>
+            </button>
+            <div class="text-xs text-white/45 text-center mt-2">Or call directly for the fastest response.</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="key_modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="key_title">
+        <div class="modal_card">
+          <div class="modal_head">
+            <div>
+              <div id="key_title" class="font-display text-2xl">OpenRouter API Key</div>
+              <div class="text-sm text-white/60 mt-1">Optional override stored only in this browser.</div>
+            </div>
+            <button id="close_key" class="btn btn_ghost px-3" aria-label="Close">
+              <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+          </div>
+          <div class="modal_body">
+            <div class="field">
+              <label class="field_label" for="or_key">API Key</label>
+              <input id="or_key" class="field_input" placeholder="sk-or-..." />
+            </div>
+            <div class="mt-3 text-xs text-white/50">
+              Default key is included for demo. Replace it with your own key for production.
+            </div>
+          </div>
+          <div class="modal_foot">
+            <div class="grid grid-cols-2 gap-2">
+              <button id="save_key" class="btn btn_gold justify-center">
+                <i data-lucide="save" class="h-4 w-4"></i>
+                <span>Save</span>
+              </button>
+              <button id="clear_key" class="btn btn_ghost justify-center">
+                <i data-lucide="trash" class="h-4 w-4"></i>
+                <span>Reset</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="url_modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="url_title">
+        <div class="modal_card">
+          <div class="modal_head">
+            <div>
+              <div id="url_title" class="font-display text-2xl">Add photo by URL</div>
+              <div class="text-sm text-white/60 mt-1">Paste direct image links from your social posts.</div>
+            </div>
+            <button id="close_url" class="btn btn_ghost px-3" aria-label="Close">
+              <i data-lucide="x" class="h-5 w-5"></i>
+            </button>
+          </div>
+          <div class="modal_body">
+            <div class="field">
+              <label class="field_label" for="img_url">Image URL</label>
+              <input id="img_url" class="field_input" placeholder="https://..." />
+            </div>
+            <div class="mt-3 text-xs text-white/50">
+              Tip: Use direct image URLs. If a link does not end with an image, it may not load.
+            </div>
+          </div>
+          <div class="modal_foot">
+            <button id="save_url" class="btn btn_gold w-full justify-center">
+              <i data-lucide="plus" class="h-4 w-4"></i>
+              <span>Add</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
